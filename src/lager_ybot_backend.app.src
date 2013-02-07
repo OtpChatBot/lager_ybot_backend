@@ -1,0 +1,11 @@
+{application, lager_ybot_backend, [
+  {description, "Lager Ybot Logging Backend"},
+  {vsn, "1.0.0"},
+  {registered, []},
+  {applications, [
+    kernel,
+    stdlib,
+    lager
+  ]},
+  {env, []}
+]}.
