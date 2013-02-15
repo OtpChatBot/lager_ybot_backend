@@ -44,8 +44,10 @@ handle_event({log, LagerMessage}, #state{ host = Host, port = Port} = State) ->
 		error ->
 			% Make message
 			Message = lager_msg:message(LagerMessage),
+			% Make json
+			Json = "{\"type\":\"broadcast\",\"content\":" ++ Message ++ "}",
 			% send log error
-			httpc:request(put, {Url, [], [], Message}, [], []);
+			httpc:request(post, {Url, [], "application/json", Json}, [], []);
 		_ ->
 			% do nothing
 			pass
@@ -53,8 +55,7 @@ handle_event({log, LagerMessage}, #state{ host = Host, port = Port} = State) ->
 	% return state
 	{ok, State};
 	
-handle_event(Event, State) ->
-  	io:format("Event ~p~n", [Event]),
+handle_event(_Event, State) ->
     {ok, State}.
     
 handle_info(_Info, State) ->
