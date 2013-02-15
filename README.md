@@ -35,8 +35,8 @@ And configure lager:
 {lager, [
   {handlers, [
     {lager_ybot_backend, [
-      {name,        "lager_amqp_backend"},
-      {level,       error},
+      {name, "lager_ybot_backend"},
+      {level, error},
       {ybot_host, "http://localhost"},
       {ybot_port, 8080}
     ]}
