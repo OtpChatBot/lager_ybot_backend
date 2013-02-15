@@ -13,11 +13,14 @@ chat rooms. Also you have some erlang project's which logging with lager.
 
 It supports resending error lagers messages to:
 
-  * IRC
-  * XMPP
-  * 37signals campfire chat.
-  * Google talk.
+  * IRC 
+  * XMPP MUC (+single user chat supporting, +private messages supporting, +ssl supporting).
+  * Campfire.
+  * HTTP.
+  * Gtalk.
   * HipChat.
+  * Flowdock.
+  * Skype.
 
 Configuring and usage
 =======================
@@ -35,8 +38,8 @@ And configure lager:
 {lager, [
   {handlers, [
     {lager_ybot_backend, [
-      {name, "lager_ybot_backend"},
-      {level, error},
+      {name,        "lager_amqp_backend"},
+      {level,       error},
       {ybot_host, "http://localhost"},
       {ybot_port, 8080}
     ]}
