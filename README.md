@@ -13,7 +13,7 @@ chat rooms. Also you have some erlang project's which logging with lager.
 
 It supports resending error lagers messages to:
 
-  * IRC 
+  * IRC (+ private messages, ssl support)
   * XMPP MUC (+single user chat supporting, +private messages supporting, +ssl supporting).
   * Campfire.
   * HTTP.
@@ -21,6 +21,7 @@ It supports resending error lagers messages to:
   * HipChat.
   * Flowdock.
   * Skype.
+  * Talkerapp.
 
 Configuring and usage
 =======================
@@ -52,7 +53,4 @@ After that it will sends error logging message to all chats are running your Ybo
 Author
 ========
 
-[@0xAX](https://twitter.com/0xAX). 
-
-
-
+[@0xAX](https://twitter.com/0xAX).
